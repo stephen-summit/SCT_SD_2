@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>number guessing game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>number guessing game</h1>
+    <p class="hint">guess a number between <strong>1</strong> and <strong>100</strong>. attempts left: <span id="attempts-left">{{ attempts_left }}</span></p>
+
+    <form id="guess-form" autocomplete="off">
+      <input id="guess-input" name="guess" type="number" min="1" max="100" placeholder="enter your guess" required>
+      <button id="guess-btn" type="submit">guess</button>
+      <button id="reset-btn" type="button" class="muted">new game</button>
+    </form>
+
+    <div id="message" class="message" aria-live="polite"></div>
+
+    <div class="history">
+      <h3>history</h3>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
